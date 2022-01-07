@@ -1,0 +1,19 @@
+
+mysql_host = '127.0.0.2'
+mysql_user = "freepbsuser"
+mysql_password = ""
+mysql_db = "asterisk"
+recording_path = "/var/spool/asterisk/monitor/%Y/%m/%d/"
+bearer_token = "token_here"
+
+wav_mime_type = 'audio/wave'
+
+recognize_in = True
+recognize_out = False
+recognize_local = False
+
+did_filter = ['*']
+
+billsec_min = 12
+
+

@@ -1,0 +1,12 @@
+
+[Unit]
+Description=SpeechAnalytics API service
+After=multi-user.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/iqtek/speechanalyics_api
+ExecStart=/opt/iqtek/speechanalyics_api/run.sh
+
+[Install]
+WantedBy=multi-user.target
