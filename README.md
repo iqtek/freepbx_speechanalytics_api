@@ -18,3 +18,5 @@ ProxyPreserveHost On
 ProxyPass /speechanalytics/api http://127.0.0.1:5005 connectiontimeout=5 timeout=30
 ProxyPassReverse /speechanalytics/api http://127.0.0.1:5005
 ```
+
+Поддержка в чате: https://t.me/iqtek_qa
