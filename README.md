@@ -12,6 +12,16 @@ exten => recordcheck,n,Set(MONFILE=${MIXMON_DIR}${YEAR}/${MONTH}/${DAY}/${CALLFI
 exten => recordcheck,n,MixMonitor(${MONFILE}.${MON_FMT},Sr(${MONFILE}-in.${MON_FMT})t(${MONFILE}-out.${MON_FMT})a${EVAL({MONITOR_REC_OPTION})}i(LOCAL_MIXMON_ID)${MIXMON_BEEP},${EVAL({MIXMON_POST})})
 ```
 
+# Модификация БД
+Добавить поле для хранения времени добавления cdr записи:
+```sql
+ALTER TABLE `cdr` ADD `addtime` TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+```
+Установить значение поля для старой записи:
+```sql
+UPDATE cdr SET addtime=calldate;
+```
+
 В конфигурацию web-сервера /etc/httpd/httpd.conf добавьте проксирование запросов в API (можно также использовать выделенный VirtualHost или nginx на отдельном порту для проксирования):
 ```
 ProxyPreserveHost On
